@@ -6,17 +6,48 @@
 
   <title>my page</title>
   <meta name="description" content="water">
-  <!--meta name="author" content="me"-->
+  <!--meta name="tommy" content="me"-->
 
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+  <!--link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css"-->
+  
+  <!-- JS -->
+  <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
+  <!--script src="https://unpkg.com/bootstrap@4.1.1/dist/js/bootstrap.min.js"></script-->
+  
+  <!-- Custom CSS/JS -->
   <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <script src="js/app.js"></script>
 
 </head>
 
 <body>
-  <!--script src="js/scripts.js"></script-->
-  
-  <h1>Hello</h2>
-  <p>click there &#x1F449;  <a href="about.html">here</a></p>
+  <header>
+    <h1>Hello</h1>
+  </header>
+
+  <p class="content" onclick="showErrorWindow();">click there &#x1F449;  <a href="about.html">here</a></p>
+
+  <div class="window" id="errorWindow" style="display:none">
+    <div class="title-bar">
+      <div class="title-bar-text">
+        Error
+      </div>
+
+      <div class="title-bar-controls">
+        <button aria-label="Minimize" onclick="hideErrorWindow()"></button>
+        <button aria-label="Maximize"></button>
+        <button aria-label="Close" onclick="hideErrorWindow();"></button>
+      </div>
+    </div>
+    <div class="window-body">
+      <p>no</p>
+      <section class="field-row" style="justify-content: flex-end">
+        <button onclick="hideErrorWindow();">OK</button>
+      </section>
+    </div>
+  </div>
 
 </body>
 

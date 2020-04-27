@@ -1,11 +1,36 @@
+body {
+  background-color: aqua;
+}
+
+header {
+  background-color: burlywood;
+  height: 50pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 h1 {
   color: green;
   font-family: verdana;
   font-size: 300%;
 }
 
-p  {
+.content {
+  text-align: center;
+}
+
+p.content {
   color: orangered;
   font-family: courier;
   font-size: 160%;
+}
+
+#errorWindow {
+  margin: 32px;
+  width: 250px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -125px;
 }
