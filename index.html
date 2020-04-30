@@ -29,16 +29,16 @@
 
   <p class="content" onclick="showErrorWindow();">click there &#x1F449;  <a href="about.html">here</a></p>
 
-  <div class="window" id="errorWindow" style="display:none">
+  <div class="window" id="errorWindow">
     <div class="title-bar">
       <div class="title-bar-text">
-        Error
+        error...
       </div>
 
       <div class="title-bar-controls">
         <button aria-label="Minimize" onclick="hideErrorWindow()"></button>
-        <button aria-label="Maximize"></button>
-        <button aria-label="Close" onclick="hideErrorWindow();"></button>
+        <button aria-label="Maximize" onclick="maximizeErrorWindow()"></button>
+        <button aria-label="Close" onclick="hideErrorWindow()"></button>
       </div>
     </div>
     <div class="window-body">
