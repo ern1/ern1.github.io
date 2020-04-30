@@ -27,7 +27,7 @@
     <h1>Hello</h1>
   </header>
 
-  <p class="content" onclick="showErrorWindow();">click there &#x1F449;  <a href="about.html">here</a></p>
+  <p class="content" onclick="showWindow('errorWindow');">click there &#x1F449;  <a href="about.html">here</a></p>
 
   <div class="window" id="errorWindow">
     <div class="title-bar">
@@ -36,15 +36,15 @@
       </div>
 
       <div class="title-bar-controls">
-        <button aria-label="Minimize" class="minimizeButton" onclick="hideErrorWindow()"></button>
-        <button aria-label="Maximize" class="maximizeButton" onclick="maximizeErrorWindow()"></button>
-        <button aria-label="Close" class="closeButton" onclick="hideErrorWindow()"></button>
+        <button aria-label="Minimize" class="minimizeButton" onclick="doSomethingToWindow('errorWindow')"></button>
+        <button aria-label="Maximize" class="maximizeButton" onclick="maximizeWindow('errorWindow')"></button>
+        <button aria-label="Close" class="closeButton" onclick="hideWindow('errorWindow')"></button>
       </div>
     </div>
     <div class="window-body">
       <p>no</p>
       <section class="field-row" style="justify-content: flex-end">
-        <button onclick="hideErrorWindow();">OK</button>
+        <button onclick="hideWindow('errorWindow');">OK</button>
       </section>
     </div>
   </div>

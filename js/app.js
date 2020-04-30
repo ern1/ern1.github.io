@@ -12,16 +12,25 @@ $(document).ready(function () {
     });
 });
 
-function showErrorWindow() {
-    var el = $("#errorWindow");
+function showWindow(elId) {
+    var el = $('#' + elId); // $("#errorWindow");
     if(el.css("visibility") != "visible") {
         playSound("assets/98_error.wav", 0.5);
         el.css("visibility", "visible");
     }
 }
 
-function hideErrorWindow() {
-    $("#errorWindow").css({visibility: "hidden", top: "30%", left: "50%"});
+function doSomethingToWindow(elId) {
+    switch(Math.floor(Math.random() * 3)) {
+        case 0: $("#" + elId).css({"--shit": "rotate(180deg)"}); console.log(0); break;
+        case 1: $("#" + elId).css({"--shit": "skewY(20deg)"}); console.log(1); break;
+        case 2: $("#" + elId).css({"--shit": "scaleY(0.7)"}); console.log(2); break;
+        case 3: $("#" + elId).css({"--shit": "scalex(1.618)"}); console.log(2); break;
+    }
+}
+
+function hideWindow(elId) {
+    $("#" + elId).css({visibility: "hidden", top: "30%", left: "50%", "--shit": "rotate(0deg)"});
 }
 
 /* Ifall jag vill skapa rutor eftersom istället för att bara visa/dölja en:
@@ -34,8 +43,8 @@ function hideErrorWindow() {
 // 
 // }
 
-function maximizeErrorWindow() {
-    hideErrorWindow();
+function maximizeWindow(elId) {
+    hideWindow(elId);
     $("body").css("background-color", "#c0c0c0");
     $("header").css("background-image", "linear-gradient(to right, #000081, #1084d0)");
 }

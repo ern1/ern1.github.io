@@ -36,7 +36,8 @@ p.content {
   top: 30%;
   left: 50%;
   margin-left: -125px;
-  transform: scale(4.0);
+  --shit: rotate(0deg);
+  transform: scale(4.0) var(--shit);
 }
 
 .closeButton, .minimizeButton {
