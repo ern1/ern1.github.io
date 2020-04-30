@@ -24,16 +24,15 @@ function hideErrorWindow() {
     $("#errorWindow").css({visibility: "hidden", top: "30%", left: "50%"});
 }
 
-/*
-// Ifall jag vill skapa rutor eftersom istället för att bara visa/dölja en:
-// Se även: https://www.html5rocks.com/en/tutorials/webcomponents/customelements/
-function createErrorWindow() {
-    // ...
-}
-function closeErrorWindow() {
-    // ...
-}
-*/
+/* Ifall jag vill skapa rutor eftersom istället för att bara visa/dölja en:
+   (kan då enklare lägga till saker som laggande fönster etc, bör kanske dock lägga till andra saker istället...)
+   Se även: https://www.html5rocks.com/en/tutorials/webcomponents/customelements/ */
+// function createErrorWindow() {
+// 
+// }
+// function closeErrorWindow() {
+// 
+// }
 
 function maximizeErrorWindow() {
     hideErrorWindow();
