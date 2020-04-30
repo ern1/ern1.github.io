@@ -39,6 +39,7 @@ h1 {
   font-weight: bold;
 }
 
+
 .window * {
   z-index: 100;
 }
@@ -66,6 +67,7 @@ h1 {
   animation: pulse 2s infinite alternate;
   -moz-animation: pulse 2s infinite alternate;
 }
+
 
 @keyframes morph {
   0% {
