@@ -7,15 +7,20 @@ body {
   position: absolute;
   height: 100%;
   top: 0; bottom: 0; left: 0; right: 0;
-  background-color: aqua;
+  background-color: #131247;
 }
 
 header {
   display: flex;
-  height: 50pt;
+  position: relative;
   justify-content: center;
   align-items: center;
-  background-color: burlywood;
+  vertical-align: top;
+  z-index:9999;
+  height: 50pt;
+  -webkit-box-shadow: 0px 5px 10px 10px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 5px 10px 10px rgba(0,0,0,0.05);
+  box-shadow: 0px 5px 10px 10px rgba(0,0,0,0.05);
 }
 
 h1 {
@@ -26,19 +31,33 @@ h1 {
 }
 
 .content {
+  position: relative;
   text-align: center;
 }
 
 .content p {
-  color: orangered;
+  color: yellow;
   font-family: courier;
-  font-size: 180%;
+  font-size: 200%;
 }
 
 .content a {
   font-weight: bold;
 }
 
+.bg {
+  position: fixed;
+  top: -75%;
+  left: -10%;
+  width: 150%;
+  height: 150%;
+  background: linear-gradient(0deg, rgba(23,22,87,1) 0%, rgba(17,16,22,1) 100%); /* #171657 - #111016 */
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+  -webkit-box-shadow: -5px 5px 10px 5px rgba(0,0,0,0.05);
+  -moz-box-shadow: -5px 5px 10px 5px rgba(0,0,0,0.05);
+  box-shadow: -5px 5px 10px 5px rgba(0,0,0,0.05);
+}
 
 .window * {
   z-index: 100;
@@ -100,11 +119,12 @@ h1 {
   0%   { opacity: 0.52 }
   25%  { opacity: 0.91 }
   50%  { opacity: 0.75 }
-  75%  { opacity: 0.47 }
+  63%  { opacity: 0.3 }
+  75%  { opacity: 0.37 }
   100% { opacity: 0.93 }
 }
 
 .annoying {
-  animation: flicker 8s infinite alternate;
+  animation: flicker 6s infinite alternate;
   animation-timing-function: cubic-bezier(0.1, 0.7, 1.0, 0.1);
 }

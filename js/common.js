@@ -8,6 +8,7 @@ function getRandomColor() {
     return "#" + ((1 << 24) * Math.random() | 0).toString(16);
 }
 
-function createBackground() {
+function generateBackground(baseColor) {
+    //$("body").append("");
     return;
 }
