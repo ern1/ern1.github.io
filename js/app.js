@@ -21,11 +21,13 @@ function showWindow(elId) {
 }
 
 function doSomethingToWindow(elId) {
-    switch(Math.floor(Math.random() * 3)) {
+    switch(Math.floor(Math.random() * 6)) {
         case 0: $("#" + elId).css({"--shit": "rotate(180deg)"}); console.log(0); break;
         case 1: $("#" + elId).css({"--shit": "skewY(20deg)"}); console.log(1); break;
-        case 2: $("#" + elId).css({"--shit": "scaleY(0.7)"}); console.log(2); break;
-        case 3: $("#" + elId).css({"--shit": "scalex(1.618)"}); console.log(2); break;
+        case 2: $("#" + elId).css({"-webkit-animation": "morph 2s 5 alternate", "animation": "morph 2s 5 alternate", "-moz-animation": "morph 2s 5 alternate"});
+        case 3: $("#" + elId).css({"--shit": "scaleY(0.7)"}); console.log(2); break;
+        case 4: $("#" + elId).css({"--shit": "scalex(1.618)"}); console.log(2); break;
+        case 5: $("#" + elId).css({"-webkit-animation": "morph 5s 3 alternate", "animation": "morph 5s 3 alternate", "-moz-animation": "morph 5s 3 alternate"});
     }
 }
 
