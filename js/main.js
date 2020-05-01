@@ -3,7 +3,6 @@ var pageY = 0;
 
 $(document).ready(function () {
     $("header").css("background-color", getRandomColor());
-
     $("body").click(function(){
         if(!$(event.target).is("a, .window *, #errorWindow")) {
             showWindow("errorWindow")
@@ -39,15 +38,34 @@ function hideWindow(winId) {
         top: "30%",
         left: "50%",
         "--shit": "rotate(0deg)",
+        opacity: 1.0
     });
 }
 
 function maximizeWindow(winId) {
-    hideWindow(winId);
-    $("body").css("background-color", "#c0c0c0");
-    $("header").css(
-        "background-image",
-        "linear-gradient(to right, #000081, #1084d0)");
+    $("#" + winId)
+    .velocity({
+        p: { "--shit": "scale(10.0)" },
+        o: { duration: 500,
+             queue: false,
+             easing: "easeInQuint",
+        }
+    })
+    .velocity({
+        p: { opacity: 0.3 },
+        o: { duration: 200,
+             delay: 300,
+             queue: false,
+             easing: "easeInSine",
+             complete: function() {
+                $("body").css("background-color", "#c0c0c0");
+                $("header").css(
+                    "background-image",
+                    "linear-gradient(to right, #000081, #1084d0)");
+                hideWindow(winId);
+            }
+        }
+    });
 }
 
 function onMouseDown(event) {

@@ -61,6 +61,8 @@ h1 {
 
 .window * {
   z-index: 100;
+  -webkit-transition: none !important;
+  transition: none !important;
 }
 
 #errorWindow {
