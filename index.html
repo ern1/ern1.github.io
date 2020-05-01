@@ -8,18 +8,17 @@
   <meta name="description" content="water">
   <!--meta name="tommy" content="me"-->
 
-  <!-- CSS/JS - CDN -->
-  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+  <!-- CSS -->
   <!--link rel="stylesheet" href="https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css"-->
-  
-  <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
-  <!--script src="https://unpkg.com/bootstrap@4.1.1/dist/js/bootstrap.min.js"></script-->
-  
-  <!-- CSS/JS - Custom -->
+  <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
   <link rel="stylesheet" href="css/main.css?v=1.0">
-  <script src="js/main.js"></script>
-  <script src="js/common.js"></script>
+  
+  <!-- JS -->
+  <!--script src="https://unpkg.com/bootstrap@4.1.1/dist/js/bootstrap.min.js"></script-->
+  <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
   <script src="js/velocity.min.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/main.js"></script>
 </head>
 
 <body>
@@ -31,21 +30,21 @@
       <p>click there &#x1F449; <a href="about.html" class="clickThis">here</a></p>
     </div>
 
-    <div class="window" id="errorWindow">
+    <div class="window" id="error-window">
       <div class="title-bar">
         <div class="title-bar-text">
           error...
         </div>
         <div class="title-bar-controls">
-          <button aria-label="Minimize" class="minimizeButton" onclick="doSomethingToWindow('errorWindow')"></button>
-          <button aria-label="Maximize" class="maximizeButton" onclick="maximizeWindow('errorWindow')"></button>
-          <button aria-label="Close" class="closeButton" onclick="hideWindow('errorWindow')"></button>
+          <button aria-label="Minimize" class="minimizeButton" onclick="doSomethingToWindow('error-window')"></button>
+          <button aria-label="Maximize" class="maximizeButton" onclick="maximizeWindow('error-window')"></button>
+          <button aria-label="Close" class="closeButton" onclick="hideWindow('error-window')"></button>
         </div>
       </div>
       <div class="window-body">
         <p>no</p>
         <section class="field-row" style="justify-content: flex-end">
-          <button onclick="hideWindow('errorWindow');">OK</button>
+          <button onclick="hideWindow('error-window');">OK</button>
         </section>
       </div>
     </div>

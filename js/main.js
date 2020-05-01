@@ -3,9 +3,9 @@ var pageY = 0;
 
 $(document).ready(function () {
     $("header").css("background-color", getRandomColor());
-    $("body").click(function(){
-        if(!$(event.target).is("a, .window *, #errorWindow")) {
-            showWindow("errorWindow")
+    $("body").click(function () {
+        if (!$(event.target).is("a, .window *, #error-window")) {
+            showWindow("error-window");
         }
     });
     $(".title-bar").on("mousedown", onMouseDown);
@@ -13,14 +13,14 @@ $(document).ready(function () {
 
 function showWindow(winId) {
     var el = $('#' + winId);
-    if(el.css("visibility") != "visible") {
-        playSound("assets/98_error.wav", 0.5);
+    if (el.css("visibility") != "visible") {
+        playSound("assets/98_error.wav", 0.4);
         el.css("visibility", "visible");
     }
 }
 
 function doSomethingToWindow(winId) {
-    switch(Math.floor(Math.random() * 6)) {
+    switch (Math.floor(Math.random() * 6)) {
         case 0: $("#" + winId).css({"--shit": "rotate(180deg)"}); break;
         case 1: $("#" + winId).css({"--shit": "skewY(20deg)"}); break;
         case 2: $("#" + winId).css({"-webkit-animation": "morph 2s 3 alternate",
@@ -30,16 +30,6 @@ function doSomethingToWindow(winId) {
         case 5: $("#" + winId).css({"-webkit-animation": "morph 5s 2 alternate",
                 "animation": "morph 5s 2 alternate", "-moz-animation": "morph 5s 2 alternate"}); break;
     }
-}
-
-function hideWindow(winId) {
-    $("#" + winId).css({
-        visibility: "hidden",
-        top: "30%",
-        left: "50%",
-        "--shit": "rotate(0deg)",
-        opacity: 1.0
-    });
 }
 
 function maximizeWindow(winId) {
@@ -68,6 +58,16 @@ function maximizeWindow(winId) {
     });
 }
 
+function hideWindow(winId) {
+    $("#" + winId).css({
+        visibility: "hidden",
+        top: "30%",
+        left: "50%",
+        "--shit": "rotate(0deg)",
+        opacity: 1.0
+    });
+}
+
 function onMouseDown(event) {
     pageX = event.pageX;
     pageY = event.pageY;
@@ -76,8 +76,8 @@ function onMouseDown(event) {
 }
 
 function onMouseMove(event) {
-    let moveX = event.originalEvent.pageX - pageX;
-    let moveY = event.originalEvent.pageY - pageY;
+    var moveX = event.originalEvent.pageX - pageX;
+    var moveY = event.originalEvent.pageY - pageY;
     pageX = event.originalEvent.pageX;
     pageY = event.originalEvent.pageY;
     $(this).css({top: "+=" + moveY + 'px', left: "+=" + moveX + 'px'});
