@@ -2,7 +2,8 @@ var pageX = 0;
 var pageY = 0;
 
 $(document).ready(function () {
-    $("header").css("background-color", getRandomColor());
+    var color = tinycolor.random().darken(10);
+    $(":root").css({"--bcolor1": color, "--hcolor": tinycolor(color.toString()).spin(50)});
     $("body").click(function () {
         if (!$(event.target).is("a, .window *, #error-window")) {
             showWindow("error-window");
@@ -10,6 +11,12 @@ $(document).ready(function () {
     });
     $(".title-bar").on("mousedown", onMouseDown);
 });
+
+function playSound(src, volume) {
+    let audio = new Audio(src);
+    audio.volume = volume;
+    audio.play();
+}
 
 function showWindow(winId) {
     var el = $('#' + winId);
@@ -33,29 +40,16 @@ function doSomethingToWindow(winId) {
 }
 
 function maximizeWindow(winId) {
-    $("#" + winId)
-    .velocity({
-        p: { "--shit": "scale(10.0)" },
-        o: { duration: 500,
-             queue: false,
-             easing: "easeInQuint",
-        }
-    })
-    .velocity({
-        p: { opacity: 0.3 },
-        o: { duration: 200,
-             delay: 300,
-             queue: false,
-             easing: "easeInSine",
-             complete: function() {
-                $("body").css("background-color", "#c0c0c0");
-                $("header").css(
-                    "background-image",
-                    "linear-gradient(to right, #000081, #1084d0)");
-                hideWindow(winId);
-            }
-        }
-    });
+    var $el = $("#" + winId);
+    $el.addClass("zoom-in")
+    setTimeout(function () {
+        $("body").css("background-color", "#c0c0c0");
+        $("header").css(
+            "background-image",
+            "linear-gradient(to right, #000081, #1084d0)");
+        hideWindow(winId);
+        $el.removeClass('zoom-in').addClass('active');
+    }, 800);
 }
 
 function hideWindow(winId) {
