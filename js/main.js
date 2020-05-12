@@ -2,8 +2,8 @@ var pageX = 0;
 var pageY = 0;
 
 $(document).ready(function () {
-    var color = tinycolor.random().darken(10);
-    $(":root").css({"--bcolor1": color, "--hcolor": tinycolor(color.toString()).spin(50)});
+    //var color = tinycolor.random().darken(10);
+    //$(":root").css({"--bcolor": color, "--hcolor": tinycolor(color.toString()).spin(50)});
     $("body").click(function () {
         if (!$(event.target).is("a, .window *, #error-window")) {
             showWindow("error-window");
@@ -43,10 +43,15 @@ function maximizeWindow(winId) {
     var $el = $("#" + winId);
     $el.addClass("zoom-in")
     setTimeout(function () {
+        // kanske fixa en css-klass istället
         $("body").css("background-color", "#c0c0c0");
-        $("header").css(
-            "background-image",
-            "linear-gradient(to right, #000081, #1084d0)");
+        $("header").css({
+            "background-image": "linear-gradient(to right, #000081, #1084d0)",
+            "justify-content": "left"
+        });
+        $("header h1").css({
+            "mix-blend-mode": "normal"
+        });
         hideWindow(winId);
         $el.removeClass('zoom-in').addClass('active');
     }, 800);

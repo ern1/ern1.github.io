@@ -11,15 +11,19 @@
   <!-- CSS -->
   <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
   <link rel="stylesheet" href="css/main.css?v=1.0">
-  
+
   <!-- JS -->
   <script src="https://unpkg.com/jquery@3.3.1/dist/jquery.min.js"></script>
   <script src="js/tinycolor.js"></script>
-  <script src="js/about.js"></script>
+  <script>
+    $(document).ready(function () {
+      var color = tinycolor.random().lighten(30);
+      $(":root").css({"--bcolor": tinycolor(color.toString()), "--bcolor-overlay": tinycolor(color.toString()).desaturate(10), "--hcolor": tinycolor(color.toString()).spin(20)});
+    });
+  </script>
 </head>
 
 <body>
-  
   <header class="annoying">
     <h1>About me</h1>
   </header>
@@ -30,5 +34,4 @@
     <p>hello 🌞</p>
   </div>
 </body>
-
 </html>
